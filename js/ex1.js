@@ -4,7 +4,7 @@ if (isNaN(input)) {
   console.log(`Sorry, ${input} is not a number.`);
 } else {
   const num = Number(input);
-  if (!Number.isInteger(Number(input))) {
+  if (!Number.isInteger(num)) {
     console.log(`Sorry, ${input} is not an integer.`);
   } else {
     if (num > 0 && num <= 100) {
