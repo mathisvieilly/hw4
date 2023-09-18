@@ -1,20 +1,20 @@
-let hours = prompt("Enter hours: ");
-let minutes = prompt("Enter minutes: ");
-let seconds = prompt("Enter seconds: ");
+const number = Math.min(Math.floor(Math.random() * 100) + 1, 100);
 
-if (isNaN(hours) || isNaN(minutes) || isNaN(seconds)) {
-  console.log("Sorry, that is not a number.");
-} else {
-  hours = Number(hours);
-  minutes = Number(minutes);
-  seconds = Number(seconds);
+let guess = Number(prompt('Enter a guess between 1 and 100: '));
 
-  const timeInSeconds = (hours * 60 * 60) + (minutes * 60) + seconds;
-  const timeInSecondsPlusOne = timeInSeconds + 1;
-  const hoursPlusOne = Math.floor(timeInSecondsPlusOne / (60 * 60)) % 24;
-  const minutesPlusOne = Math.floor((timeInSecondsPlusOne / 60) % 60);
-  const secondsPlusOne = timeInSecondsPlusOne % 60;
+let guesses = 0;
 
-  console.log(`Time input: ${hours}h${minutes}m${seconds}s`);
-  console.log(`One second later: ${hoursPlusOne}h${minutesPlusOne}m${secondsPlusOne}s`);
+while (guess !== number) {
+  if (guess === number) {
+    break;
+  }
+  if (guess < number) {
+    alert('Too low, guess again');
+  } else {
+    alert('Too high, guess again');
+  }
+  guesses++;
+  guess = Number(prompt('Enter a guess between 1 and 100: '));
 }
+
+alert(`Correct! It took you ${guesses} attempts to guess the correct number.`);

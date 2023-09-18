@@ -1,37 +1,14 @@
-const name = prompt("Please enter your name");
-
-if (name === "") {
-  console.log("Sorry, you must enter a name.");
-} else {
-  const units = prompt(
-    "Please enter the number of units you have completed at college"
-  );
-
-  if (isNaN(units)) {
-    console.log(`Sorry, ${units} is not a number.`);
-  } else {
-    const num = Number(units);
-    if (!Number.isInteger(num)) {
-      console.log(`Sorry, ${units} is not an integer.`);
-    } else {
-      if (num < 0) {
-        console.log(`Sorry, ${num} is not a valid entry.`);
-      } else {
-        console.log(`Hello ${name}`);
-        console.log(`Your grade standing is ${getGradeStanding(num)}`);
-      }
-    }
-  }
+function fahrenheitToCelsius(degreesFahrenheit) {
+  return (degreesFahrenheit - 32) * (5 / 9);
 }
 
-function getGradeStanding(units) {
-  if (units <= 30) {
-    return "Freshman";
-  } else if (units <= 60) {
-    return "Sophomore";
-  } else if (units <= 90) {
-    return "Junior";
-  } else {
-    return "Senior";
-  }
-}
+let deg212 = 212;
+let converted212 = fahrenheitToCelsius(deg212);
+console.log(`Water's boiling temperature is ${deg212} Fahrenheit or ${converted212} Celsius`);
+
+// Test with 32 degrees Fahrenheit (No variables)
+console.log(`32 degrees Fahrenheit = ${fahrenheitToCelsius(32)} degrees Celsius`);
+
+// Create an variable and test
+let deg98pt7 = 98.7;
+console.log(`Temperature of ${deg98pt7} Fahrenheit is ${fahrenheitToCelsius(deg98pt7).toFixed(2)} is equivalent to 37 degrees Celsius`);

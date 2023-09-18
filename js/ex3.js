@@ -1,33 +1,14 @@
-const day = prompt("Please enter a day of the week");
+const r = Number(prompt("Enter the circle radius:"));
 
-switch (day) {
-  case "mon":
-    printDay("Monday", "Tuesday");
-    break;
-  case "tue":
-    printDay("Tuesday", "Wednesday");
-    break;
-  case "wed":
-    printDay("Wednesday", "Thursday");
-    break;
-  case "thu":
-    printDay("Thursday", "Friday");
-    break;
-  case "fri":
-    printDay("Friday", "Saturday");
-    break;
-  case "sat":
-    printDay("Saturday", "Sunday");
-    break;
-  case "sun":
-    printDay("Sunday", "Monday");
-    break;
-  default:
-    console.log("Sorry, you've entered an invalid day.");
-    break;
-}
+const circle = {
+  radius: r,
+  circumference: function () {
+    return 2 * Math.PI * this.radius;
+  },
+  area: function () {
+    return Math.PI * this.radius ** 2;
+  },
+};
 
-function printDay(current, next) {
-  console.log(`You entered: ${current}`);
-  console.log(`The following day is: ${next}`);
-}
+console.log(`Its circumference is ${circle.circumference()}`);
+console.log(`Its area is ${circle.area()}`);

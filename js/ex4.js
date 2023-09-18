@@ -1,25 +1,13 @@
-const first = prompt("Enter first number");
-const second = prompt("Enter second number");
+const values = [3, 11, 7, 2, 9, 10];
 
-if (isNaN(first) || isNaN(second)) {
-  console.log("Sorry, one of those is not a number.");
-} else {
-  const firstInteger = Number(first);
-  const secondInteger = Number(second);
-
-  if (!Number.isInteger(firstInteger) || !Number.isInteger(secondInteger)) {
-    console.log("Sorry, one of those is not an integer.");
-  } else if (secondInteger === 0) {
-    console.log("Sorry, you cannot divide by zero.");
-  } else {
-    printResults(firstInteger, secondInteger);
+const sum = function (array) {
+  let total = 0;
+  for (const value of array) {
+    total += value;
   }
+  return total;
 }
 
-function printResults(first, second) {
-  console.log(`${first} + ${second} = ${first + second}`);
-  console.log(`${first} - ${second} = ${first - second}`);
-  console.log(`${first} * ${second} = ${first * second}`);
-  console.log(`${first} / ${second} = ${first / second}`);
-  console.log(`${first} % ${second} = ${first % second}`);
-}
+console.log(sum(values));
+console.log(Math.min(...values));
+console.log(Math.max(...values));

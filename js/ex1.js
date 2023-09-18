@@ -1,16 +1,13 @@
-const input = prompt("Please enter a number between 1 and 100");
+const number1 = prompt("Enter a number");
+const number2 = prompt("Enter another number");
+const operator = prompt("operator");
 
-if (isNaN(input)) {
-  console.log(`Sorry, ${input} is not a number.`);
+if (operator !== "+" && operator !== "-" && operator !== "*" && operator !== "/") {
+    console.log("Invalid operator");
+} else if (isNaN(number1) || isNaN(number2)) {
+    console.log("Invalid number");
 } else {
-  const num = Number(input);
-  if (!Number.isInteger(num)) {
-    console.log(`Sorry, ${input} is not an integer.`);
-  } else {
-    if (num > 0 && num <= 100) {
-      console.log(`Thank you! You entered ${num}, a valid number.`);
-    } else {
-      console.log(`Sorry, ${num} is not a valid entry.`);
-    }
-  }
+  const result = eval(number1 + operator + number2);
+
+  console.log(`${number1} ${operator} ${number2} = ${result}`)
 }
